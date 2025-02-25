@@ -4,19 +4,21 @@
 	Description: This is the blinker program, using a breadboard.
 */
 
+const int PIN_5 = 5;
 int blinkTime = 1000;
-int pin5 = 5;
 
 void setup()
 {
-    pinMode(pin5, OUTPUT);
+    pinMode(PIN_5, OUTPUT);
 }
 
 void loop()
 {
     // Repeat until program stopped
-    digitalWrite(pin5, HIGH);
+    digitalWrite(PIN_5, HIGH);
     delay(blinkTime); // Wait for 1000 millisecond(s)
-    digitalWrite(pin5, LOW);
+    digitalWrite(PIN_5, LOW);
     delay(blinkTime); // Wait for 1000 millisecond(s)
+
+	blinkTime += 1000; // Blink for 1 second longer each time.
 }
