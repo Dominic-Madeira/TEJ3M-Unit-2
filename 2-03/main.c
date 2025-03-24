@@ -1,7 +1,7 @@
 /*
-	Author:      Dominic M.
-	Created:     2025-02-24
-	Description: This is the blinker program, using a breadboard.
+Author:      Dominic M.
+Created:     2025-02-24
+Description: This is the blinker program, using a breadboard.
 */
 
 const int PIN_5 = 5;
