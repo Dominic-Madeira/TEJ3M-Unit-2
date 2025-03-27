@@ -1,7 +1,7 @@
 /*
-  Author:      Dominic M.
-  Created:     2025-03-18
-  Description: This spins a motor 180 degrees and back continuously
+ * Author:      Dominic M.
+ * Created:     2025-03-18
+ * Description: This spins a motor 180 degrees and back continuously
 */
 
 #include <Servo.h>
@@ -15,11 +15,11 @@ const int delayTime = 15;
 const int motorSpeed = 1;
 int currentPosition = 0;
 
-Servo servo_9;
+Servo servoMotor;
 
 void setup()
 {
-  servo_9.attach(PIN_9, minPulseWidth, maxPulseWidth);
+  servoMotor.attach(PIN_9, minPulseWidth, maxPulseWidth);
 }
 
 void loop()
@@ -28,14 +28,14 @@ void loop()
   // of 1 degrees
   for (currentPosition = minPosition; currentPosition <= maxPosition; currentPosition += motorSpeed) {
     // tell servo to go to position in variable 'currentPosition'
-    servo_9.write(currentPosition);
+    servoMotor.write(currentPosition);
     // wait 15 ms for servo to reach the position
     delay(delayTime); // Wait for 15 millisecond(s)
   }
   
   for (currentPosition = maxPosition; currentPosition >= minPosition; currentPosition -= motorSpeed) {
     // tell servo to go to position in variable 'currentPosition'
-    servo_9.write(currentPosition);
+    servoMotor.write(currentPosition);
     // wait 15 ms for servo to reach the position
     delay(delayTime); // Wait for 15 millisecond(s)
   }
